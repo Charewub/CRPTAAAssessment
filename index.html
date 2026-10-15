@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Conflict Response Profile (CRP) Assessment - AirAsia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        airasia: {
+                            red: '#ED1B24',
+                            darkred: '#C7121A',
+                            charcoal: '#1F2937',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            font-family: 'Sarabun', sans-serif; 
+            background-color: #0f172a; 
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: #1e293b; 
+        }
+        .fade-in { animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .option-card {
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .option-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -3px rgba(237, 27, 36, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: #ED1B24;
+        }
+        .option-card:active {
+            transform: translateY(0);
+        }
+        .progress-bar-fill {
+            transition: width 0.4s ease-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 py-8">
+
+    <div id="app" class="w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden relative border-t-8 border-airasia-red">
+
+        <!-- ================= INTRO SCREEN ================= -->
+        <div id="intro-screen" class="p-8 md:p-12 fade-in">
+            <!-- AirAsia Logo -->
+            <div class="flex justify-center mb-6">
+                <img src="https://images.seeklogo.com/logo-png/0/2/air-asia-logo-png_seeklogo-5027.png" 
+                     referrerpolicy="no-referrer" 
+                     alt="AirAsia Logo" 
+                     class="h-16 md:h-20 object-contain drop-shadow-sm">
+            </div>
+
+            <div class="text-center mb-8 border-b border-slate-100 pb-6">
+                <span class="text-xs font-bold tracking-widest text-airasia-red uppercase bg-red-50 px-3 py-1 rounded-full">Leadership & Team Assessment</span>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-3 mb-2 tracking-tight">CONFLICT RESPONSE PROFILE (CRP)</h1>
+                <h2 class="text-lg md:text-xl text-slate-600 font-medium">Discover Your Top 2 Conflict Modes</h2>
+                <p class="text-slate-400 text-sm mt-1">ค้นหารูปแบบพฤติกรรมที่คุณมักใช้เมื่อเผชิญความขัดแย้งในการทำงาน</p>
+            </div>
+
+            <div class="space-y-6 text-slate-600 leading-relaxed text-sm md:text-base">
+                <p>เมื่อเกิดความเห็นต่าง ความไม่เข้าใจ หรือความขัดแย้งในการทำงาน แต่ละคนย่อมมีแนวทางตอบสนองเฉพาะตัว <strong>Conflict Response Profile (CRP)</strong> ออกแบบขึ้นเพื่อให้คุณเข้าใจแนวโน้มพฤติกรรมของตนเองตามแนวคิด Thomas–Kilmann Conflict Mode Framework ซึ่งแบ่งรูปแบบการรับมือออกเป็น 5 มิติ:</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+                        <strong class="text-slate-800 text-airasia-red">Competing (การแข่งขัน):</strong> ยืนยันจุดยืนและความต้องการของตนเอง
+                    </div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+                        <strong class="text-slate-800 text-airasia-red">Collaborating (การร่วมมือ):</strong> แสวงหาทางออกที่ตอบโจทย์ทั้งสองฝ่าย
+                    </div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+                        <strong class="text-slate-800 text-airasia-red">Compromising (การประนีประนอม):</strong> ปรับลดความต้องการเพื่อหาจุดร่วม
+                    </div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
+                        <strong class="text-slate-800 text-airasia-red">Avoiding (การหลีกเลี่ยง):</strong> เลี่ยงหรือชะลอการเผชิญความขัดแย้ง
+                    </div>
+                    <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-100 md:col-span-2">
+                        <strong class="text-slate-800 text-airasia-red">Accommodating (การโอนอ่อน):</strong> ให้ความสำคัญกับความต้องการของอีกฝ่าย
+                    </div>
+                </div>
+
+                <div class="bg-red-50/60 p-5 rounded-xl border border-red-100 text-slate-700">
+                    <h3 class="text-sm font-bold text-airasia-red uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        คำแนะนำก่อนเริ่มต้น
+                    </h3>
+                    <p class="text-slate-700 mb-1">โปรดตอบคำถามตาม <strong>พฤติกรรมที่คุณมักทำจริง</strong> ไม่ใช่สิ่งที่คิดว่าควรทำหรือสิ่งที่องค์กรคาดหวัง</p>
+                    <p class="text-xs text-slate-500">*แบบทดสอบเป็นลักษณะบังคับเลือก (Forced-Choice) จำนวน 30 ข้อ ไม่มีการจับเวลา และเมื่อเลือกแล้วจะไม่สามารถย้อนกลับไปแก้ไขได้</p>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-center">
+                <button onclick="startQuiz()" class="bg-airasia-red hover:bg-airasia-darkred text-white font-semibold py-3.5 px-10 rounded-full shadow-lg shadow-red-500/20 transition-all text-base flex items-center gap-2">
+                    เริ่มต้นทำแบบทดสอบ
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- ================= QUIZ SCREEN ================= -->
+        <div id="quiz-screen" class="hidden p-6 md:p-10 fade-in flex flex-col min-h-[520px]">
+            <!-- Header with enlarged logo -->
+            <div class="flex justify-between items-center pb-4 border-b border-slate-100 mb-6">
+                <img src="https://images.seeklogo.com/logo-png/0/2/air-asia-logo-png_seeklogo-5027.png" 
+                     referrerpolicy="no-referrer" 
+                     alt="AirAsia Logo" 
+                     class="h-12 md:h-14 object-contain drop-shadow-sm">
+                <span class="text-xs md:text-sm font-semibold text-slate-400 uppercase tracking-wider">Conflict Response Profile</span>
+            </div>
+
+            <div class="mb-8">
+                <div class="flex justify-between text-sm font-semibold text-slate-600 mb-2">
+                    <span>ความก้าวหน้า</span>
+                    <span id="progress-text" class="text-airasia-red font-bold">ข้อ 1 / 30</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                    <div id="progress-bar" class="bg-airasia-red h-2 rounded-full progress-bar-fill" style="width: 3.33%;"></div>
+                </div>
+            </div>
+
+            <div class="flex-grow flex flex-col justify-center">
+                <h3 class="text-center text-sm md:text-base font-medium text-slate-500 mb-6">
+                    เลือกข้อความที่สะท้อนสิ่งที่ท่าน <strong>มักทำจริงในสถานการณ์ทำงาน</strong> มากที่สุด
+                </h3>
+                
+                <div class="space-y-4">
+                    <button onclick="selectOption(1)" class="option-card group text-left p-6 border-2 border-slate-200 hover:border-airasia-red rounded-xl bg-white focus:outline-none w-full shadow-sm flex items-start gap-4">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full border border-slate-300 group-hover:border-airasia-red group-hover:bg-red-50 flex items-center justify-center font-bold text-slate-400 group-hover:text-airasia-red text-sm transition-colors">A</span>
+                        <span id="opt1-text" class="text-base md:text-lg text-slate-700 font-normal leading-relaxed pt-0.5">Option 1</span>
+                    </button>
+                    
+                    <button onclick="selectOption(2)" class="option-card group text-left p-6 border-2 border-slate-200 hover:border-airasia-red rounded-xl bg-white focus:outline-none w-full shadow-sm flex items-start gap-4">
+                        <span class="flex-shrink-0 w-8 h-8 rounded-full border border-slate-300 group-hover:border-airasia-red group-hover:bg-red-50 flex items-center justify-center font-bold text-slate-400 group-hover:text-airasia-red text-sm transition-colors">B</span>
+                        <span id="opt2-text" class="text-base md:text-lg text-slate-700 font-normal leading-relaxed pt-0.5">Option 2</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= RESULT SCREEN ================= -->
+        <div id="result-screen" class="hidden p-8 md:p-12 fade-in">
+            <!-- Header with enlarged logo -->
+            <div class="flex justify-between items-center border-b border-slate-100 pb-5 mb-8">
+                <img src="https://images.seeklogo.com/logo-png/0/2/air-asia-logo-png_seeklogo-5027.png" 
+                     referrerpolicy="no-referrer" 
+                     alt="AirAsia Logo" 
+                     class="h-12 md:h-14 object-contain drop-shadow-sm">
+                <span class="text-xs md:text-sm font-semibold text-slate-400 uppercase tracking-widest">Assessment Report</span>
+            </div>
+
+            <div class="text-center mb-8">
+                <span id="res-title" class="inline-block text-xs font-bold tracking-widest text-airasia-red uppercase bg-red-50 px-3.5 py-1.5 rounded-full mb-3">PROFILE 01</span>
+                <h2 id="res-name-en" class="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">THE ARCHETYPE</h2>
+                <h3 id="res-name-th" class="text-lg md:text-xl font-medium text-slate-600 mt-1">ชื่อภาษาไทย</h3>
+                <p id="res-tagline" class="italic text-airasia-red font-medium mt-2 text-sm md:text-base">"Tagline"</p>
+                
+                <!-- Profile Image Area -->
+                <div class="my-6">
+                    <img id="res-image" 
+                         src="" 
+                         alt="Profile Image" 
+                         referrerpolicy="no-referrer"
+                         class="w-full max-w-xl mx-auto rounded-xl shadow-md border border-slate-200 object-contain max-h-96 bg-slate-50">
+                </div>
+            </div>
+
+            <div class="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-200/80 mb-8">
+                <p id="res-desc" class="text-slate-700 leading-relaxed text-base md:text-lg mb-6"></p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-emerald-700 flex items-center gap-2 mb-2 text-sm uppercase tracking-wide">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            Strengths (จุดแข็ง)
+                        </h4>
+                        <p id="res-str" class="text-slate-600 text-sm leading-relaxed"></p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                        <h4 class="font-bold text-amber-700 flex items-center gap-2 mb-2 text-sm uppercase tracking-wide">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                            Blind Spots (ข้อควรระวัง)
+                        </h4>
+                        <p id="res-blind" class="text-slate-600 text-sm leading-relaxed"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="flex justify-center pt-2">
+                <button onclick="location.reload()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-8 rounded-full transition-colors text-sm">
+                    ทำแบบประเมินอีกครั้ง
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const questions = [
+            { m1: 'B', t1: 'เมื่อเกิดความเห็นต่าง ฉันมักชวนอีกฝ่ายพูดคุยเพื่อทำความเข้าใจความต้องการที่แท้จริงของทั้งสองฝ่าย', m2: 'A', t2: 'เมื่อมีความคิดเห็นขัดแย้งกัน ฉันมักยืนยันจุดยืนของตนเองอย่างชัดเจน แม้อีกฝ่ายจะไม่เห็นด้วย' },
+            { m1: 'C', t1: 'เมื่อเกิดความเห็นต่าง ฉันมักเสนอให้แต่ละฝ่ายยอมลดความต้องการบางส่วนเพื่อหาข้อตกลงร่วมกัน', m2: 'E', t2: 'เมื่อความคิดเห็นของฉันแตกต่างจากอีกฝ่าย ฉันมักยอมทำตามความเห็นของอีกฝ่ายเพื่อรักษาความสัมพันธ์' },
+            { m1: 'D', t1: 'เมื่อเริ่มมีความคิดเห็นขัดแย้งกัน ฉันมักเลือกเงียบแทนการแสดงความคิดเห็นของตนเอง', m2: 'B', t2: 'เมื่อข้อเสนอของเราแตกต่างกัน ฉันมักพยายามหาวิธีใหม่ที่สามารถตอบโจทย์สำคัญของทั้งสองฝ่ายได้' },
+            { m1: 'A', t1: 'เมื่อฉันมั่นใจว่าวิธีของตนเองถูกต้อง ฉันมักพยายามโน้มน้าวให้อีกฝ่ายยอมรับวิธีนั้น', m2: 'C', t2: 'เมื่อทั้งสองฝ่ายต้องการสิ่งเดียวกัน ฉันมักเสนอให้แบ่งทรัพยากรหรือผลประโยชน์ระหว่างกัน' },
+            { m1: 'E', t1: 'เมื่ออีกฝ่ายแสดงความต้องการอย่างชัดเจน ฉันมักปรับความต้องการของตนเองเพื่อให้อีกฝ่ายได้รับสิ่งที่ต้องการ', m2: 'D', t2: 'เมื่อรู้ว่าการพูดคุยอาจนำไปสู่การโต้เถียง ฉันมักหลีกเลี่ยงการหยิบเรื่องนั้นขึ้นมาพูด' },
+            { m1: 'B', t1: 'เมื่อเกิดความขัดแย้งฉันมักตั้งคำถามเพื่อค้นหาสาเหตุที่อยู่เบื้องหลังจุดยืนของแต่ละฝ่าย', m2: 'C', t2: 'เมื่อไม่สามารถตกลงกันได้ ฉันมักเสนอทางเลือกกึ่งกลางระหว่างข้อเสนอของทั้งสองฝ่าย' },
+            { m1: 'A', t1: 'ในสถานการณ์ที่ต้องตัดสินใจเร่งด่วน ฉันมักเลือกตัดสินใจตามแนวทางของตนเองมากกว่ารอให้ทุกฝ่ายเห็นพ้อง', m2: 'E', t2: 'เมื่อเกิดความไม่พอใจกัน ฉันมักเป็นฝ่ายกล่าวขอโทษก่อน แม้จะไม่ได้คิดว่าตนเองเป็นฝ่ายผิดทั้งหมด' },
+            { m1: 'D', t1: 'เมื่อมีความขัดแย้งเกิดขึ้น ฉันมักรอให้สถานการณ์สงบลงก่อน โดยยังไม่เข้าไปจัดการปัญหา', m2: 'C', t2: 'เมื่อมีการต่อรอง ฉันมักพร้อมยอมเสียบางอย่าง หากอีกฝ่ายยอมปรับข้อเรียกร้องของตนเช่นกัน' },
+            { m1: 'E', t1: 'เมื่อเพื่อนร่วมงานต้องการความช่วยเหลือที่กระทบแผนของฉัน ฉันมักยอมเปลี่ยนแผนเพื่อช่วยเขา', m2: 'B', t2: 'เมื่ออีกฝ่ายมีความเห็นตรงข้าม ฉันมักอธิบายเหตุผลของตนเองพร้อมรับฟังเหตุผลของอีกฝ่ายอย่างจริงจัง' },
+            { m1: 'A', t1: 'เมื่อมีการโต้แย้ง ฉันมักใช้ข้อมูล เหตุผล หรือหลักฐานเพื่อพิสูจน์ว่าจุดยืนของตนเองมีน้ำหนักมากกว่า', m2: 'D', t2: 'เมื่อถูกชวนให้แสดงความคิดเห็นในประเด็นที่มีความขัดแย้ง ฉันมักตอบอย่างกว้าง ๆ เพื่อไม่ต้องแสดงจุดยืนชัดเจน' },
+            { m1: 'C', t1: 'เมื่อมีเวลาจำกัด ฉันมักเลือกข้อตกลงที่ทั้งสองฝ่ายพอรับได้ แม้อาจไม่ใช่ทางออกที่ดีที่สุด', m2: 'A', t2: 'เมื่อเป้าหมายของฉันขัดกับความต้องการของผู้อื่น ฉันมักให้ความสำคัญกับการบรรลุเป้าหมายของตนเองก่อน' },
+            { m1: 'B', t1: 'เมื่อทีมมีความต้องการที่ขัดกัน ฉันมักชวนทุกฝ่ายกำหนดเป้าหมายร่วมก่อนหาแนวทางแก้ไข', m2: 'E', t2: 'เมื่อมีความเห็นต่างกับคนที่ต้องทำงานร่วมกันต่อไป ฉันมักให้ความสำคัญกับความสัมพันธ์มากกว่าการยืนยันว่าตนเองคิดถูก' },
+            { m1: 'D', t1: 'เมื่อมีคนไม่พอใจฉัน ฉันมักลดการติดต่อหรือเว้นระยะห่างจากคนนั้น', m2: 'A', t2: 'เมื่อมีคนคัดค้านข้อเสนอของฉัน ฉันมักโต้แย้งกลับอย่างตรงไปตรงมาเพื่อรักษาจุดยืน' },
+            { m1: 'C', t1: 'เมื่อความคิดเห็นแตกต่างกันมาก ฉันมักพยายามหาประเด็นที่แต่ละฝ่ายสามารถยอมกันได้เพื่อให้เกิดข้อสรุป', m2: 'B', t2: 'เมื่อเกิดปัญหาที่ต่างฝ่ายต่างได้รับผลกระทบ ฉันมักชวนกันวิเคราะห์ปัญหาและออกแบบวิธีแก้ไขร่วมกัน' },
+            { m1: 'E', t1: 'เมื่ออีกฝ่ายไม่พอใจกับการตัดสินใจของฉัน ฉันมักยอมปรับการตัดสินใจเพื่อให้อีกฝ่ายสบายใจขึ้น', m2: 'D', t2: 'เมื่อเกิดปัญหาระหว่างเพื่อนร่วมงาน ฉันมักเลือกไม่เข้าไปเกี่ยวข้อง แม้เรื่องนั้นจะส่งผลต่อการทำงานของฉัน' },
+            { m1: 'A', t1: 'เมื่อความขัดแย้งทำให้งานไม่คืบหน้า ฉันมักเป็นฝ่ายกำหนดข้อสรุปที่ตนเองเห็นว่าเหมาะสม', m2: 'B', t2: 'เมื่อมีความขัดแย้งซับซ้อน ฉันมักใช้เวลาแลกเปลี่ยนมุมมองอย่างละเอียดเพื่อให้ได้ทางออกที่ยั่งยืน' },
+            { m1: 'C', t1: 'เมื่อมีข้อเสนอที่แข่งขันกัน ฉันมักเสนอให้เลือกใช้บางส่วนของแต่ละข้อเสนอ แม้ต้องตัดบางส่วนออก', m2: 'D', t2: 'เมื่อการสนทนาเริ่มตึงเครียด ฉันมักเปลี่ยนหัวข้อสนทนาเพื่อหลีกเลี่ยงการเผชิญหน้า' },
+            { m1: 'E', t1: 'เมื่อความต้องการของฉันทำให้อีกฝ่ายลำบาก ฉันมักยอมสละสิ่งที่ตนเองต้องการเพื่อไม่ให้อีกฝ่ายเดือดร้อน', m2: 'A', t2: 'เมื่อมีข้อจำกัดด้านเวลา ฉันมักผลักดันให้ทีมใช้แนวทางที่ตนเองเลือก แม้บางคนยังมีข้อกังวล' },
+            { m1: 'B', t1: 'เมื่อพบว่าข้อเสนอเดิมไม่ตอบโจทย์ทุกฝ่าย ฉันมักชวนกันคิดทางเลือกเพิ่มเติมแทนการจำกัดอยู่กับข้อเสนอเดิม', m2: 'D', t2: 'เมื่อมีประเด็นที่ฉันไม่เห็นด้วย ฉันมักเก็บความคิดเห็นไว้กับตัวเองและไม่หยิบยกขึ้นมาอีก' },
+            { m1: 'C', t1: 'เมื่อเกิดความขัดแย้งเรื่องลำดับความสำคัญ ฉันมักเสนอให้แต่ละฝ่ายได้ดำเนินการตามความต้องการของตนเองคนละช่วงเวลา', m2: 'E', t2: 'เมื่อมีความขัดแย้งเรื่องการจัดสรรทรัพยากร ฉันมักยอมให้อีกฝ่ายได้รับสิ่งที่ต้องการก่อน แม้ฉันจะมีความจำเป็นเช่นกัน' },
+            { m1: 'D', t1: 'เมื่อเกิดความขัดแย้งที่ยังไม่รุนแรง ฉันมักปล่อยผ่านโดยหวังว่าเรื่องจะคลี่คลายไปเอง', m2: 'A', t2: 'เมื่อฉันเห็นว่าการตัดสินใจของผู้อื่นไม่เหมาะสม ฉันมักคัดค้านอย่างหนักแน่นเพื่อให้เปลี่ยนไปใช้แนวทางที่ฉันเสนอ' },
+            { m1: 'B', t1: 'เมื่อทั้งสองฝ่ายมีข้อมูลไม่ตรงกัน ฉันมักเสนอให้ตรวจสอบข้อเท็จจริงร่วมกันก่อนตัดสินใจ', m2: 'C', t2: 'เมื่อข้อตกลงเริ่มติดขัด ฉันมักเสนอให้แลกเปลี่ยนสิ่งที่แต่ละฝ่ายยอมให้กันได้' },
+            { m1: 'E', t1: 'เมื่อมีคนขอให้ฉันทำตามวิธีของเขา ฉันมักยอมปรับวิธีทำงานของตนเอง แม้จะชอบวิธีเดิมมากกว่า', m2: 'B', t2: 'เมื่อมีความเห็นต่างเกี่ยวกับวิธีทำงาน ฉันมักชวนอีกฝ่ายทดลองหรือพัฒนาแนวทางที่ผสมจุดแข็งของทั้งสองฝ่าย' },
+            { m1: 'A', t1: 'เมื่อเกิดความขัดแย้งเรื่องอำนาจการตัดสินใจ ฉันมักยืนยันสิทธิหรือขอบเขตอำนาจของตนเอง', m2: 'C', t2: 'เมื่อทั้งสองฝ่ายไม่สามารถได้สิ่งที่ต้องการทั้งหมด ฉันมักสนับสนุนข้อสรุปที่แต่ละฝ่ายได้รับประโยชน์บางส่วน' },
+            { m1: 'D', t1: 'เมื่อจำเป็นต้องคุยเรื่องที่อาจทำให้อีกฝ่ายไม่พอใจ ฉันมักเลื่อนการสนทนานั้นออกไป', m2: 'E', t2: 'เมื่อเกิดความขัดแย้งกับผู้ที่มีความสำคัญต่อฉัน ฉันมักยอมถอยจากจุดยืนของตนเองเพื่อไม่ให้เกิดความบาดหมาง' },
+            { m1: 'B', t1: 'เมื่อเกิดความขัดแย้งซ้ำ ๆ ฉันมักชวนอีกฝ่ายทบทวนวิธีทำงานหรือข้อตกลงร่วมกันเพื่อแก้ปัญหาที่ต้นเหตุ', m2: 'A', t2: 'เมื่อมีการต่อรองผลประโยชน์ ฉันมักพยายามรักษาสิ่งที่ตนเองต้องการไว้ให้ได้มากที่สุด' },
+            { m1: 'C', t1: 'เมื่อมีความขัดแย้งเรื่องภาระงาน ฉันมักเสนอให้แบ่งความรับผิดชอบใหม่โดยให้แต่ละฝ่ายรับภาระเพิ่มหรือลดลงบางส่วน', m2: 'D', t2: 'เมื่อมีการโต้เถียงในที่ประชุม ฉันมักถอนตัวจากการอภิปรายโดยไม่พยายามหาข้อสรุป' },
+            { m1: 'E', t1: 'เมื่ออีกฝ่ายมีความรู้สึกไม่ดีต่อข้อเสนอของฉัน ฉันมักยอมถอนข้อเสนอนั้นเพื่อรักษาบรรยากาศที่ดี', m2: 'A', t2: 'เมื่อการอภิปรายมีหลายความเห็น ฉันมักผลักดันให้ข้อเสนอของตนเองได้รับเลือกเป็นข้อสรุปสุดท้าย' },
+            { m1: 'D', t1: 'เมื่อรู้สึกว่าความขัดแย้งกำลังรุนแรงขึ้น ฉันมักออกจากสถานการณ์นั้นก่อนโดยยังไม่ตกลงว่าจะกลับมาแก้ปัญหาเมื่อใด', m2: 'B', t2: 'เมื่อได้ข้อสรุปจากความขัดแย้ง ฉันมักตรวจสอบว่าทั้งสองฝ่ายยอมรับและพร้อมสนับสนุนแนวทางนั้นจริง ๆ' },
+            { m1: 'C', t1: 'เมื่อการเจรจายืดเยื้อ ฉันมักเสนอให้ตกลงกันในระดับที่พอยอมรับได้เพื่อยุติข้อขัดแย้งและเดินหน้าต่อ', m2: 'E', t2: 'เมื่อเกิดความขัดแย้งเรื่องผลประโยชน์ ฉันมักเลือกให้อีกฝ่ายได้รับประโยชน์มากกว่า แม้ตนเองจะได้น้อยลง' }
+        ];
+
+        const profiles = {
+            "AB": { 
+                title: "PROFILE 01", 
+                name: "THE CONSTRUCTIVE CHALLENGER", 
+                thName: "นักท้าทายเชิงสร้างสรรค์", 
+                tagline: "Challenge Ideas. Build Better Solutions.", 
+                desc: "เป็นคนที่กล้ายืนยันจุดยืนของตนเอง พร้อมเปิดรับมุมมองของผู้อื่นเมื่อเห็นว่าการแลกเปลี่ยนจะนำไปสู่ทางออกที่ดีกว่า ไม่หลีกเลี่ยงการถกเถียง และมองว่าความเห็นต่างสามารถสร้างคุณค่าได้หากทุกฝ่ายพร้อมใช้เหตุผล", 
+                str: "กล้าเผชิญปัญหา สื่อสารชัดเจน ผลักดันการตัดสินใจ", 
+                blind: "อาจกดดันผู้อื่นโดยไม่ตั้งใจ หรือกลายเป็นการถกเถียงเพื่อเอาชนะมากกว่าหาทางออกร่วมกัน", 
+                image: "https://s.imgz.io/2026/10/15/PROFILE-01-THE-CONSTRUCTIVE-CHALLENGER1a9221c11870d41f.jpg" 
+            },
+            "AC": { 
+                title: "PROFILE 02", 
+                name: "THE STRATEGIC NEGOTIATOR", 
+                thName: "นักเจรจาเชิงกลยุทธ์", 
+                tagline: "Stand Firm. Trade Smart.", 
+                desc: "รู้ว่าควรยืนยันในประเด็นใดและยอมปรับในเรื่องใด มุ่งรักษาผลประโยชน์สำคัญของตนเอง แต่พร้อมแลกเปลี่ยนหรือต่อรองเพื่อให้ได้ข้อตกลงที่สามารถเดินหน้าต่อได้", 
+                str: "เจรจาต่อรองเก่ง รู้จักจัดลำดับความสำคัญ มุ่งผลลัพธ์", 
+                blind: "อาจมองความขัดแย้งเป็นเรื่องของการได้และเสียมากเกินไป จนมองข้ามทางออกที่สร้างคุณค่าร่วมกัน", 
+                image: "https://s.imgz.io/2026/10/15/PROFILE-02-THE-STRATEGIC-NEGOTIATOR5a568c3133016521.jpg" 
+            },
+            "AD": { 
+                title: "PROFILE 03", 
+                name: "THE SELECTIVE FIGHTER", 
+                thName: "นักสู้ผู้เลือกสนาม", 
+                tagline: "Pick Your Battles. Hold Your Ground.", 
+                desc: "มีแนวโน้มตอบสนองต่อความขัดแย้งสองทางที่แตกต่างกัน คือยืนยันจุดยืนอย่างหนักแน่น หรือเลือกไม่เข้าไปเกี่ยวข้องกับความขัดแย้งนั้น การตอบสนองอาจขึ้นอยู่กับความสำคัญของประเด็น ความพร้อม หรือสถานการณ์ที่เผชิญ", 
+                str: "สามารถยืนหยัดในเรื่องที่ให้ความสำคัญ และไม่จำเป็นต้องเข้าไปโต้แย้งทุกเรื่อง", 
+                blind: "พฤติกรรมอาจดูคาดเดายากสำหรับผู้อื่น เพราะบางครั้งตอบโต้อย่างจริงจัง แต่บางครั้งกลับเงียบหรือถอนตัว", 
+                image: "https://s.imgz.io/2026/10/15/PROFILE-03-THE-SELECTIVE-FIGHTERaace10e51b6757c0.jpg" 
+            },
+            "AE": { 
+                title: "PROFILE 04", 
+                name: "THE PROTECTIVE ADVOCATE", 
+                thName: "ผู้ยืนหยัดเพื่อคนสำคัญ", 
+                tagline: "Firm on Principles. Generous with People.", 
+                desc: "มีทั้งแนวโน้มในการยืนยันความต้องการของตนเอง และการยอมปรับตามความต้องการของผู้อื่น ในบางสถานการณ์อาจยืนหยัดอย่างเด็ดขาด ขณะที่บางสถานการณ์พร้อมเสียสละเพื่อรักษาความสัมพันธ์หรือสนับสนุนคนที่ให้ความสำคัญ", 
+                str: "มีทั้งความหนักแน่นและความยืดหยุ่นในการให้ความสำคัญกับผู้อื่น", 
+                blind: "อาจมีความไม่สม่ำเสมอในการรักษาขอบเขตของตนเอง หรือยอมให้บางคนมากเกินไปแต่ยืนยันจุดยืนกับบางคนมากเกินไป", 
+                image: "https://s.imgz.io/2026/10/15/PROFILE-04-THE-PROTECTIVE-ADVOCATE9d74dc8289212b0c.jpg" 
+            },
+            "BC": { 
+                title: "PROFILE 05", 
+                name: "THE PRACTICAL COLLABORATOR", 
+                thName: "นักร่วมมือที่มุ่งผลจริง", 
+                tagline: "Find Common Ground. Make Progress.", 
+                desc: "ชอบทำความเข้าใจความต้องการของทุกฝ่ายและแสวงหาทางออกที่ตอบโจทย์ร่วมกัน แต่หากข้อจำกัดไม่เอื้อให้ได้ผลลัพธ์ที่สมบูรณ์แบบ ก็พร้อมหาจุดกึ่งกลางเพื่อให้เกิดข้อตกลงและสามารถเดินหน้าต่อไปได้", 
+                str: "สร้างความร่วมมือ หาทางออกได้หลากหลาย และเปลี่ยนการพูดคุยเป็นข้อสรุปที่ปฏิบัติได้", 
+                blind: "อาจใช้เวลากับการหาข้อตกลงมากเกินไป หรือยอมประนีประนอมเร็วเกินกว่าที่จะค้นพบทางออกที่ดีกว่า", 
+                image: "https://s.imgz.io/2026/10/15/PROFILE-05-THE-PRACTICAL-COLLABORATORcb241c8dc11989b5.jpg" 
+            },
+            "BD": { 
+                title: "PROFILE 06", 
+                name: "THE THOUGHTFUL NAVIGATOR", 
+                thName: "นักจัดการความต่างอย่างรอบคอบ", 
+                tagline: "Pause. Understand. Engage.", 
+                desc: "มีทั้งแนวโน้มในการร่วมมือแก้ไขความขัดแย้ง และการถอยออกจากสถานการณ์เพื่อหลีกเลี่ยงการเผชิญหน้า ในบางครั้งพร้อมพูดคุยอย่างลึกซึ้ง แต่บางครั้งอาจชะลอหรือหลีกเลี่ยงประเด็นที่ทำให้รู้สึกไม่พร้อม", 
+                str: "มีแนวโน้มพิจารณาสถานการณ์ก่อนเข้าร่วมการพูดคุย และสามารถสร้างบทสนทนาที่มีคุณภาพเมื่อเลือกเข้าไปมีส่วนร่วม", 
+                blind: "อาจเลื่อนการพูดคุยเรื่องสำคัญนานเกินไป หรือปล่อยให้ปัญหาสะสมระหว่างที่รอจังหวะเหมาะสม", 
+                image: "https://s.imgz.io/2026/10/15/PROFILE-06-THE-THOUGHTFUL-NAVIGATOR56da374de0aeccad.jpg" 
+            },
+            "BE": { 
+                title: "PROFILE 07", 
+                name: "THE EMPATHETIC PARTNER", 
+                thName: "คู่คิดผู้เข้าใจผู้อื่น", 
+                tagline: "Understand People. Build Solutions.", 
+                desc: "ให้ความสำคัญกับความรู้สึกและความต้องการของผู้อื่น พร้อมทำงานร่วมกันเพื่อหาทางออกที่ทุกฝ่ายยอมรับได้ มีแนวโน้มรับฟัง สนับสนุน และรักษาความสัมพันธ์ แต่อาจยอมลดความต้องการของตนเองเมื่อเห็นว่าอีกฝ่ายให้ความสำคัญกับเรื่องนั้นมากกว่า", 
+                str: "สร้างความไว้วางใจ รับฟังอย่างเข้าใจ ส่งเสริมความสัมพันธ์และความร่วมมือ", 
+                blind: "อาจให้ความสำคัญกับความรู้สึกของผู้อื่นมากจนละเลยความต้องการหรือขอบเขตของตนเอง", 
+                image: "https://s.imgz.io/2026/10/15/PROFILE-07-THE-EMPATHETIC-PARTNERbd4473f6dae4cebd.jpg" 
+            },
+            "CD": { 
+                title: "PROFILE 08", 
+                name: "THE FLEXIBLE SETTLER", 
+                thName: "นักคลี่คลายที่ไม่ยึดติด", 
+                tagline: "Keep It Simple. Keep It Moving.", 
+                desc: "ไม่ต้องการให้ความขัดแย้งยืดเยื้อหรือขยายตัวโดยไม่จำเป็น มีแนวโน้มเลือกประนีประนอมหากสามารถตกลงกันได้ง่าย แต่หากเรื่องยังไม่พร้อมหาข้อสรุป ก็อาจเลือกชะลอหรือปล่อยผ่านแทนการเผชิญหน้าโดยตรง", 
+                str: "ลดการปะทะที่ไม่จำเป็น หาข้อตกลงที่พอรับได้ และไม่ยึดติดกับการเอาชนะ", 
+                blind: "อาจเลือกทางออกที่ง่ายหรือเร็วเกินไป และหลีกเลี่ยงปัญหาเชิงลึกที่จำเป็นต้องได้รับการแก้ไข", 
+                image: "https://s.imgz.io/2026/10/15/PROFILE-08-THE-FLEXIBLE-SETTLER0e8325b2a5a8a4a8.jpg" 
+            },
+            "CE": { 
+                title: "PROFILE 09", 
+                name: "THE HARMONY BROKER", 
+                thName: "นักประสานเพื่อความลงตัว", 
+                tagline: "Bridge Differences. Preserve Harmony.", 
+                desc: "มุ่งรักษาความสัมพันธ์และบรรยากาศที่ดีระหว่างผู้คน พร้อมหาข้อตกลงที่แต่ละฝ่ายพอใจ และยอมปรับความต้องการของตนเองเพื่อให้สถานการณ์คลี่คลาย มีแนวโน้มให้ความสำคัญกับความลงตัวมากกว่าการยืนยันจุดยืนจนเกิดการเผชิญหน้า", 
+                str: "ประสานความแตกต่างได้ดี มีความยืดหยุ่น และช่วยลดความตึงเครียดในความสัมพันธ์", 
+                blind: "อาจประนีประนอมมากเกินไปจนเสียประโยชน์สำคัญของตนเอง หรือยอมรับข้อตกลงที่ไม่แก้ปัญหาที่แท้จริง", 
+                image: "https://s.imgz.io/2026/10/15/PROFILE-09-THE-HARMONY-BROKER9c6462d773e0abae.jpg" 
+            },
+            "DE": { 
+                title: "PROFILE 10", 
+                name: "THE PEACEKEEPER", 
+                thName: "ผู้รักษาความสงบ", 
+                tagline: "Ease Tension. Protect Relationships.", 
+                desc: "ไม่ชอบการเผชิญหน้าที่ทำให้ความสัมพันธ์ตึงเครียด มีแนวโน้มเลือกหลีกเลี่ยงความขัดแย้ง หรือยอมปรับตามความต้องการของอีกฝ่ายเพื่อรักษาบรรยากาศที่ดี มักให้ความสำคัญกับความสงบและความสัมพันธ์มากกว่าการเรียกร้องสิ่งที่ตนเองต้องการ", 
+                str: "ลดความตึงเครียด ไม่กระตุ้นความขัดแย้งโดยไม่จำเป็น และให้ความสำคัญกับความรู้สึกของผู้อื่น", 
+                blind: "อาจไม่กล้าสื่อสารความต้องการของตนเอง ปล่อยให้ปัญหาค้างคา หรือสะสมความไม่พอใจโดยไม่แสดงออก", 
+                image: "https://s.imgz.io/2026/10/15/PROFILE-10-THE-PEACEKEEPER1ee41ac78416d9b5.jpg" 
+            }
+        };
+
+        let currentQIndex = 0;
+        let scores = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+
+        function startQuiz() {
+            document.getElementById('intro-screen').classList.add('hidden');
+            document.getElementById('quiz-screen').classList.remove('hidden');
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const q = questions[currentQIndex];
+            document.getElementById('progress-text').innerText = `ข้อ ${currentQIndex + 1} / 30`;
+            document.getElementById('progress-bar').style.width = `${((currentQIndex + 1) / 30) * 100}%`;
+            
+            document.getElementById('opt1-text').innerText = q.t1;
+            document.getElementById('opt2-text').innerText = q.t2;
+        }
+
+        function selectOption(optNumber) {
+            const q = questions[currentQIndex];
+            const selectedMode = optNumber === 1 ? q.m1 : q.m2;
+            scores[selectedMode]++;
+            
+            currentQIndex++;
+            if (currentQIndex < questions.length) {
+                renderQuestion();
+            } else {
+                calculateResult();
+            }
+        }
+
+        function calculateResult() {
+            const sortedModes = Object.keys(scores).sort((a, b) => {
+                if (scores[b] !== scores[a]) {
+                    return scores[b] - scores[a];
+                }
+                return a.localeCompare(b);
+            });
+
+            const top2Keys = [sortedModes[0], sortedModes[1]].sort().join('');
+            const resultData = profiles[top2Keys];
+
+            document.getElementById('quiz-screen').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+
+            document.getElementById('res-title').innerText = resultData.title;
+            document.getElementById('res-name-en').innerText = resultData.name;
+            document.getElementById('res-name-th').innerText = resultData.thName;
+            document.getElementById('res-tagline').innerText = `"${resultData.tagline}"`;
+            document.getElementById('res-desc').innerText = resultData.desc;
+            document.getElementById('res-str').innerText = resultData.str;
+            document.getElementById('res-blind').innerText = resultData.blind;
+            
+            // Render Image with automatic fallback if hotlinking is blocked
+            const imgEl = document.getElementById('res-image');
+            imgEl.onerror = function() {
+                if (!this.dataset.fallbackTried) {
+                    this.dataset.fallbackTried = "true";
+                    this.src = "https://wsrv.nl/?url=" + encodeURIComponent(resultData.image);
+                }
+            };
+            imgEl.src = resultData.image;
+        }
+    </script>
+</body>
+</html>
